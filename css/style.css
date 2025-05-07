@@ -1,0 +1,523 @@
+/****** General ***********/
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+:root {
+    --main-color: #0065FC;
+    --main-bg-color: #F2F2F2;
+    --filter-bg-color: #DEEBFF;
+}
+
+.fa-solid {
+    color: var(--main-color);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 22px;
+}
+/*petite modif du selector ici 
+article.card ? */
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    /*ma ligne de code box-shadow: rgba(0, 0, 0.15, 0.1) 0px 3px 15px;*/
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 16px;
+}
+
+.euro {
+    font-weight: 700;
+}
+
+.neutral-star {
+    color: var(--main-bg-color)
+}
+
+/****** Hebergements And Populaires ***********/
+.hebergements-and-populaires {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hebergements-and-populaires section {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/****** Hebergements ***********/
+.hebergements {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*Ma permis de régler le problème 
+    de marggin du lien h3*/
+}
+
+.lien-h3 { 
+    margin-top: 20px; 
+    width: fit-content;
+   /*pour le witdth reste coller
+    au texte a l'intérieur de la balise a */
+}
+
+h3.h-problem {
+    margin: 0;
+    /*permet d'enlever 
+    le margin du navigateur*/
+}
+
+
+
+h3.hebergements-title{
+    margin-bottom: 20px;
+    margin-top: 0em;
+    /*margin-bottom pour garde l'espace entrele titre et les div
+    margin-top pour enlever un margin qui prenait le dessus 
+    je ne le retrouve pas dans le fichier CSS je ne sais pas d'où vient le code 
+    mais le voici grâce à l'inspecteur web 
+    h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+    c'est le même code qui prend le dessus pour le h3 
+    "Afficher plus" 
+    Recherche google : 
+    Une feuille de style d'agent utilisateur (user agent stylesheet) 
+    est un ensemble de règles CSS par défaut que les navigateurs web 
+    appliquent automatiquement aux éléments HTML pour garantir une rendu 
+    visuel cohérent sur différentes pages web. Ces règles par défaut existent dans 
+    chaque navigateur et aident à maintenir une uniformité pour les éléments comme 
+    les en-têtes, les paragraphes, les listes, etc., en appliquant des styles de base
+    tels que des marges, des rembourrages, des tailles de police et des couleurs.
+Résumé court: ça vient de mon navigateur
+Solution: margin 0 directement sur le h3 problématique */
+}
+
+.parent-hebergements {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+    /*1ère ligne pour faire en sorte que les é suivantes puisse avoir effet 
+    2ème présenter les 2 div child correctement
+    3ème permet de faire l'espace entre le 2child de façon verticale */
+}
+
+.hebergements-card {
+    width: 100%;/*sans ce n'est pas du tout responsive*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    /*Mon choix d'utiliser grid à la place de flex est que j'ai déjà essayer
+    en flex mais je n'ai pas trouver la solution pour y réussir donc changement 
+    en grid qui me paraissait plus simple
+    gap espacement gauche droite entre les cards*/
+}
+
+.hebergements-card img {
+    width: 100%;/*permet a l'image de prendre toute la largeur*/
+    height: 124px;/*valeur prise sur la maquette a changer pour 
+    chaque media querries*/
+    /*copier coller des card populaire puis ajuster 
+    à mes besoins*/
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.hebergements-card .card {
+    height: 90%;
+    padding-bottom: 15px;
+}
+
+.hebergements-card .card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.hebergements-card h3 {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.hebergements-card .card-subtitle {
+    margin: 0;
+}
+
+.hebergements-card .card-rating {
+    margin-bottom: 5px;
+}
+
+
+/****** Populaires ***********/
+.populaires {
+    width: 32%;
+}
+
+.populaires-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.populaires-cards .card {
+    display: flex;
+    margin-top: 33px;
+}
+
+.populaires-cards img {
+    width: 33%;
+    height: 136px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.populaires-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.populaires-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.populaires-cards .card-subtitle {
+    margin: 0;
+}
+
+.populaires-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+/******Nav/Header********/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 79px;
+}
+
+nav img {
+    align-self: center;
+}
+
+nav div {
+    display: flex;
+    gap: 68px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 35px;
+    
+}
+
+nav div a {
+    display: flex;
+    align-items: end;
+}
+
+nav div a:hover {
+    color: #0065FC;
+    border-top: solid 2px;
+}
+/*Note pas besoin d'utiliser un text-décoration !!!
+Temps perdu: Beaucoup trop
+Solution border-top*/
+
+
+
+/**Fin**Nav/Header********/
+
+/*****info-section*****/
+
+section.inf h2, p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+section.inf {
+    display: flex;
+    flex-flow: column nowrap ;
+    gap: 35px;
+}
+
+section.inf div {
+    display: flex;
+}
+
+.inf-top {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+/*****Barre de recherche***********/
+
+.inf-search {
+    height: 49px;
+
+}
+
+.loupe{
+    display: none;
+}
+
+.fa-location-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #F2F2F2;
+    color: black;
+}
+
+/*-webkit-fill-available
+The -webkit-fill-available property is a CSS extension
+used primarily in WebKit-based browsers like Safari and
+Chrome. It specifies that an element should fill the 
+available space within its containing block, taking into 
+account various layout constraints such as padding and margins.
+This property is useful for creating more complex and responsive 
+layouts, especially when using flexbox or grid layouts.
+
+However, -webkit-fill-available is not supported in all browsers. 
+To ensure cross-browser compatibility, developers often use 
+vendor-prefixed properties along with the standard stretch keyword. 
+For instance, the following CSS can be used to provide a fallback for 
+browsers that do not support -webkit-fill-available:*/
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+input#recherche {
+    /*j'utilise actuellement brave browsser
+    l'user agent stylesheet me pose problème 
+    et je n'arrive pas à supprimer les margins
+    paddings de ce dernier*/
+    height: 45px;/*solution ce nombre exact en px*/
+    border: solid 1px #F2F2F2 ;
+    border-right: none;
+}
+
+input#recherche {
+    text-align: center;
+    font-weight: 900;
+}
+button.search-btn {
+    color: white;
+    background-color: #0065FC;
+    border: 1px;
+    height: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 15px 16px 15px 16px;
+}
+
+span {
+    font-weight: 700;
+}
+
+/*******Fin barre de recherche**********/
+
+/****Filtres****/
+
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    height: 50px;
+}
+
+.filter-bar h4 {
+    margin: 0;
+    align-self: center;
+    /*Enlève les margins du navigateur
+    Centre tout les h4 qui sont dans 
+    la div filter-bar*/
+}
+
+.filter-bar div {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: solid 2px #D9D9D9;
+    border-radius: 25px;
+    padding: 4px 19px 4px 19px;
+}
+
+.filter-bar div:hover {
+    background-color: #DEEBFF;
+}
+/****Fin Filtres****/
+
+/****info-sub****/
+.inf-sub {
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+/*Problèmes rencontrer avec l'icon suivante *.fa-circle-info* 
+le front ne correspond pas à maquette. J'ai pas trouver d'autre icon,
+donc peut être un problème venant du CSS tout ce que j'ai trouver 
+c'est le code suivant:
+.fa-circle-info:before, .fa-info-circle:before {
+    content: "\f05a";
+}
+Ça cible bien mon icon mais je vois pas a quoi sa sert */
+
+
+/*******Activité-Marseille****************/
+
+
+.activite-marseille {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    margin-top: 35px;
+}
+
+.activite-marseille h2 {
+    margin: 0;
+}
+
+.activite-marseille .div-act {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
+}
+
+.div-act .card-activite {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    height: fit-content;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.div-act img {
+    object-fit: cover;
+    width: 100%;
+    height: 380px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.div-act h3 {
+    margin: 0;
+}
+
+.div-act div {
+    padding: 20px 19px 20px 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+    .hebergements-and-populaires {
+        flex-direction: column;
+    }
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .populaires {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .populaires-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .populaires-cards a {
+        width: 30%;
+    }
+
+    .populaires-cards .card-title {
+        font-size: 14px;
+    }
+
+    .populaires-cards .card-subtitle {
+        font-size: 13px;
+    }
+
+    .loupe{
+        display: none;
+    }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    /* ... */
+    .loupe {
+        display: block;
+    }
+
+
+    .search-btn {
+        display: none;
+    }
+}
