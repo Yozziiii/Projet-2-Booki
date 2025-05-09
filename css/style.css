@@ -467,12 +467,27 @@ c'est le code suivant:
     height: auto;
 }
    
+/****Footer****/
 
+footer {
+    background-color: #F2F2F2;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
 
+footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+}
 
-
-
-
+footer div h3 {
+    margin: 0;
+}
 
 
 
