@@ -429,7 +429,8 @@ span {
 
 .populaires-cards img {
     height: 136px;
-    width: 123px;
+    min-width: 118px;
+    max-width: 118px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border: solid 5px white;
@@ -442,7 +443,6 @@ span {
     padding: 20px 5px 5px 15px;
     display: flex;
     justify-content: space-between;
-    gap: 24px;
 }
 
 .populaires-cards .card-title {
@@ -577,7 +577,8 @@ footer div h3 {
     }
 
     .populaires-cards  img {
-        width: 33.33%;
+        min-width: 33.33%;
+        max-width: 33.33%;
     }
 
     .populaires-cards .card-content {
