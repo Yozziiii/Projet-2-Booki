@@ -151,21 +151,6 @@ section.inf {
     color: black;
 }
 
-/*-webkit-fill-available
-The -webkit-fill-available property is a CSS extension
-used primarily in WebKit-based browsers like Safari and
-Chrome. It specifies that an element should fill the 
-available space within its containing block, taking into 
-account various layout constraints such as padding and margins.
-This property is useful for creating more complex and responsive 
-layouts, especially when using flexbox or grid layouts.
-
-However, -webkit-fill-available is not supported in all browsers. 
-To ensure cross-browser compatibility, developers often use 
-vendor-prefixed properties along with the standard stretch keyword. 
-For instance, the following CSS can be used to provide a fallback for 
-browsers that do not support -webkit-fill-available:*/
-
 form {
     display: flex;
     width: 87%;/*tester en devtool pour savoir le %*/
@@ -487,9 +472,9 @@ span {
 .div-act .card-activite {
     background-color: white;
     border-radius: 20px;
-    height: 100%;/*Très impotant de mettre 100% comme sa toutes les cards suivent la 
-    même hauteur et non l'hauteur en rapport avec leur contenu
-    provoque un décalage d'hauteur entre les cards*/
+    height: 100%;/*Très impotant de mettre 100% comme sa toutes les cards sont à la 
+    même hauteur et non à l'hauteur en rapport avec leur contenu
+    sinon ça provoque un décalage d'hauteur entre les cards*/
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
     display: flex;
     flex-direction: column;
