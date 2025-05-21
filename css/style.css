@@ -504,7 +504,7 @@ span {
 
 footer {
     background-color: #F2F2F2;
-    width: 100%;
+    width: auto;
     height: fit-content;
     display: flex;
     flex-direction: row;
