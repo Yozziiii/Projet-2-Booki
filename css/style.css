@@ -757,4 +757,9 @@ footer div h3 {
         gap: 50px;
         padding: 30px;
     }
+    
+    footer div {
+        padding: 0;
+        width: auto;
+    }
 }
